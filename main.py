@@ -10,6 +10,7 @@ Original file is located at
 """
 
 import numpy as np
+from numpy import exp
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 import pandas as pd
@@ -135,18 +136,6 @@ modelplot(Infected)
 
 """**Finding k**"""
 
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb 17 03:25:49 2021
-
-@author: equir
-"""
-
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-
-
 Infected = pd.read_csv("https://raw.githubusercontent.com/datadesk/california-coronavirus-data/master/cdph-state-totals.csv")
 
 Infected.drop(Infected.head(300).index,inplace=True)
@@ -206,12 +195,6 @@ def bestfitplot(xList, log_yData, line):
 bestfitplot(xList, log_yData, line(xList))
 
 """**Error Analysis for k**"""
-
-import numpy as np
-from numpy import exp
-import matplotlib.pyplot as plt
-from scipy.integrate import odeint
-
 
 kbest= 4/25 # Best guess
 kupper= 4.5/25 # Upper bound
